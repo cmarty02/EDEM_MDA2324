@@ -1,6 +1,10 @@
 from json import dumps
 from confluent_kafka import Producer
 import time
+from faker import Faker
+
+# Crear una instancia de Faker
+fake = Faker()
 
 
 
@@ -25,7 +29,7 @@ producer = Producer(read_ccloud_config("client.properties"))
 topic_kafka = 'topic_python'
 
 for e in range(100):
-    data = {'New message - ': e*4}
+    data = {"name":fake.name(), "age": fake.random_number(digits=5),}
     data_str = dumps(data)  # Serialize dictionary to a string
     data_bytes = data_str.encode('utf-8')  # Encode string to bytes
     key = str(e).encode('utf-8')
