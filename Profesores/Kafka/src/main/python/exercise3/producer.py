@@ -20,7 +20,7 @@ def read_ccloud_config(config_file):
 
 
 
-producer = Producer(read_ccloud_config("client.properties"))
+producer = Producer(read_ccloud_config("client"))
 
 
 # Send 100 messages where the key is the index and the message to send is "test message - index"
