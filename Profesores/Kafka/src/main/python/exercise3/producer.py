@@ -26,7 +26,7 @@ producer = Producer(read_ccloud_config("client"))
 # Send 100 messages where the key is the index and the message to send is "test message - index"
 # the topic name is myTopic
 
-topic_kafka = 'topic_python'
+topic_kafka = 'ARBOLES'
 
 for e in range(100):
     data = {"name":fake.name(), "age": fake.random_number(digits=5),}
